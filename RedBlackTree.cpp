@@ -240,3 +240,4 @@ void RedBlackTree::clear() {
     rootNode = nilNode;
     nodeCount = 0;
 }
+
