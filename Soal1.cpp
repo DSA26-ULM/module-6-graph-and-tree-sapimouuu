@@ -1,13 +1,16 @@
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 int main(){
     int n;
     cin>>n;
 
-    string label;
-    cin>>label;
+    vector<char>label(n);
+    for(int i=0;i<n;i++){
+        cin>>label[i];
+    }
 
     int adjMatrix[10][10] = {0};
     
@@ -23,9 +26,9 @@ int main(){
         int kolom = v - 'A';
         adjMatrix[baris][kolom]=w;
     }
-    cout<<"Adjacency Matrix: ";
+    cout<<"Adjacency Matrix: \n";
 
-    cout<<" ";
+    cout<<"  ";
     
     for(int i=0;i<n;i++){
         cout<<label[i]<<" ";
@@ -34,7 +37,7 @@ int main(){
 
     for(int i=0;i<n;i++){
         char labelBaris=label[i];
-        cout<<labelBaris;
+        cout<<labelBaris<<" ";
 
         int indeksBaris = labelBaris - 'A';
 
@@ -42,7 +45,7 @@ int main(){
             char labelKolom=label[j];
             int indeksKolom=labelKolom - 'A';
 
-            cout<<adjMatrix[indeksBaris][indeksKolom];
+            cout<<adjMatrix[indeksBaris][indeksKolom]<<" ";
         }
         cout<<"\n";
     }
